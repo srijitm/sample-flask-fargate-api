@@ -18,13 +18,13 @@ export class CdkStack extends cdk.Stack {
         containerName: 'flask-api',
         containerPort: 5000,
       },
-      serviceName: 'flask-api-service',
+      serviceName: 'sample-flask-fargate-api-service',
       assignPublicIp: false,
       desiredCount: 2
     });
     
     loadBalancedFargateService.targetGroup.configureHealthCheck({
-      path: "/",
+      path: "/health",
       port: "5000"
     });
 
