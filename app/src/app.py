@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, Response
+from flask import Flask, request, redirect, Response, jsonify
 from gallery import gallery
 import base64
 
@@ -8,7 +8,8 @@ bucket = 'my-playpen'
 
 @app.route('/health')
 def health():
-  return 'pass'
+  status = {'health': 'pass'}
+  return status
 
 @app.route('/hello/<name>')
 def hello(name):
