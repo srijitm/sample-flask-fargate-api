@@ -2,7 +2,7 @@
 
 ## Description
 
-This project will build a basic Python Flask API docker image and run it on ECS Fargate using AWS CDK.
+This project will build a basic Python Flask API docker image and run it on ECS Fargate behind a private ALB. An API Gateway (HTTP) will be provisioned along with a VPC Link to allow connectivity to the ALB. The purpose of this demo is to provide the building blocks to add a custom authorizer to API Gateway.
 
 ** Note: This is not Production grade and simply meant as a demo **
 
@@ -10,6 +10,7 @@ This project will build a basic Python Flask API docker image and run it on ECS 
 
 * ECS Fargate
 * Application Load Balancer
+* API Gateway
 
 ## Pre-Requisites
 
@@ -19,7 +20,7 @@ This project will build a basic Python Flask API docker image and run it on ECS 
 ## Instructions
 
 ```bash
-cd cdk
+cd app/cdk
 npm install
 npm run build
 cdk bootstrap # Only needs to be executed once
