@@ -8,8 +8,7 @@ bucket = 'my-playpen'
 
 @app.route('/health')
 def health():
-  status = {'health': 'pass'}
-  return status
+  return 'healthy'
 
 @app.route('/hello/<name>')
 def hello(name):
